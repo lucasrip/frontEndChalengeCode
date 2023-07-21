@@ -1,5 +1,4 @@
 export const colors = {
-
   gray:{
     light:'#FCFCFC',
     normal:'#EFEFEF',
@@ -13,6 +12,9 @@ export const colors = {
   black:{
     normal:'#0000',
     medium:'#0C1821', 
+  },
+  white:{
+    normal:'#FFFFFF',
   }
   
 };
