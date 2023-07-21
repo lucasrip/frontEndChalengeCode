@@ -4,6 +4,7 @@ import { StrictMode } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App';
+import Home from './components/Home';
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
     children:[
       {
         path: '/',
-        element:<div><h1>sdsds</h1></div>
+        element:<Home/>
       }
     ] 
   }

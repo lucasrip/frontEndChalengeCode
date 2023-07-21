@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   * {
@@ -9,7 +9,7 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font: 14px Roboto, sans-serif;
+    font: 16px Roboto, sans-serif;
   }
 
   button {
