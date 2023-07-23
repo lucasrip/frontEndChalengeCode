@@ -4,7 +4,7 @@ import { StrictMode } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App';
-import Home from './components/Home';
+import Home from './pages/Home';
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([

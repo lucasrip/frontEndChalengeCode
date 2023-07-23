@@ -19,7 +19,6 @@ export const colors = {
   
 };
 
-
 // gray:{
 //   light:'',
 //   normal:'',

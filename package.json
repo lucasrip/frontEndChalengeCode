@@ -14,10 +14,12 @@
     "pretier": "0.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.2",
     "react-query": "3.39.3",
     "react-router-dom": "6.10.0",
     "react-toastify": "9.1.2",
-    "styled-components": "5.3.9"
+    "styled-components": "5.3.9",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "18.15.11",

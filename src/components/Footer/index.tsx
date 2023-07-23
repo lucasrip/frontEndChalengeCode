@@ -6,7 +6,8 @@ export default function Footer()
     <Container>
       <span>
       This is a challenge by Coodesh
-        <a 
+        <a
+          title='link para o site da codesh'
           href="https://coodesh.com/" 
           target="blank"
         >
