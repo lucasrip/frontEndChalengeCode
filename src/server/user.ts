@@ -9,7 +9,7 @@ export async function registerUser({nome,email,senha}:Iuser)
 
 export async function loginUser({nome,email,senha}:Iuser)
 {
-  const response = await api.get('/findUser',{params:{nome,senha,email}});
+  const response = await api.post('/findUser',{nome,senha,email});
   return response;
 }
 

@@ -10,6 +10,7 @@ import {Iuser} from '../../types/user';
 import { loginUser, registerUser } from '../../server/user';
 import { useMutation } from 'react-query';
 import { AxiosError } from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 interface IoptionsConfig
 {
@@ -24,6 +25,8 @@ export default function Home()
     label:'',
     action:(data:IFormData)=> void
   });
+
+  const navigate = useNavigate();
 
   function handleRegister(data:IFormData)
   {
@@ -49,7 +52,7 @@ export default function Home()
   const {mutate:loginMutate } = useMutation((data:Iuser) => loginUser(data),{
     onSuccess:(response) => {
       toast.success(`logado com sucesso, seja bem vindo ${response.data.nome}`);
-      setFormIsOpen(false);
+      navigate('/dashboard',{state:{ user:response.data}});
     } ,
     onError: (data:AxiosError) => {
       const error = data?.response?.data as string;

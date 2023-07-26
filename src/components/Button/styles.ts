@@ -47,6 +47,7 @@ export const Container = styled.button`
  &:disabled
  {
    cursor: not-allowed;
+   background:${colors.gray.medium};
  }
 
  &:hover

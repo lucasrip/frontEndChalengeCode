@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App';
 import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import SubmitFile from './components/SubmitSales.tsx';
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -15,6 +17,20 @@ const router = createBrowserRouter([
       {
         path: '/',
         element:<Home/>
+      },
+      {
+        path: '/dashboard',
+        element:<Dashboard/>,
+        children:[
+         {
+          path:'/dashboard',
+          element: <SubmitFile/>,
+         },
+         {
+          path:'/dashboard/test',
+          element: <h1>teste</h1>,
+         }
+        ]
       }
     ] 
   }

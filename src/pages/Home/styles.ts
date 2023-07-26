@@ -6,18 +6,18 @@ display:flex;
 flex-direction:column;
 width:100%;
 min-height:100vh;
-background:${colors.gray.normal};
+background:${colors.gray.light};
 color:${colors.black.medium};
 gap:7.1875rem;
 padding:1rem 0.5rem;
 padding-bottom:5rem;
+
 
 header
 {
   width: 100%;
   img
   {
-
     width: 14.1875rem;
     height: 5.625rem;
   }
