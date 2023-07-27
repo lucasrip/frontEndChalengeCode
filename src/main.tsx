@@ -4,6 +4,10 @@ import { StrictMode } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import SubmitFile from './components/SubmitSales.tsx';
+import SalesList from './components/Saleslist';
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -13,7 +17,21 @@ const router = createBrowserRouter([
     children:[
       {
         path: '/',
-        element:<div><h1>sdsds</h1></div>
+        element:<Home/>
+      },
+      {
+        path: '/dashboard',
+        element:<Dashboard/>,
+        children:[
+         {
+          path:'/dashboard',
+          element: <SubmitFile/>,
+         },
+         {
+          path:'/dashboard/salesList',
+          element: <SalesList/>,
+         }
+        ]
       }
     ] 
   }
