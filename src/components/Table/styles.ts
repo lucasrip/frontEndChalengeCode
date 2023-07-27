@@ -6,8 +6,7 @@ export const Container = styled.div`
    display:flex;
    flex-direction:column;
    gap:1rem;
-   overflow: auto;
-
+   width: 80%;
 
    strong
    {
@@ -24,13 +23,14 @@ export const Container = styled.div`
         background: ${colors.gray.light};
         text-transform:capitalize;
         border-collapse: collapse;
-        min-width:15rem;
+        width: 100%;
+        overflow-x: scroll;
 
         th,
         td
         {
           width: 12rem;
-          min-width:5rem
+          min-width:2rem
           height: 2rem;
           padding:0.5rem;
           overflow:auto;
@@ -46,7 +46,7 @@ export const Container = styled.div`
     
       table
       {
-  
+        font-size:0.5rem;
         th,
         td
         {

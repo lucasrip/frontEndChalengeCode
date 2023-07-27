@@ -12,10 +12,21 @@ export const Container = styled.div`
    {
      margin-left:2rem;
      color:${colors.white.normal};
+     word-break:break-all;
     a{
      margin-left:0.5rem;
      color:${colors.white.normal};
     
     }
    }
+
+     @media(max-width:300px)
+  {
+      span
+      {
+       margin-left:0.2rem;
+       color:${colors.white.normal};
+
+     }
+  }
 `;

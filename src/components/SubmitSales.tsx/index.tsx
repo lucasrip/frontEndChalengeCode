@@ -11,7 +11,8 @@ import { formatItemsSales } from "./formatItemsSales";
 import { tiposTrasacao } from "./tiposTransação";
 import Table from "../Table";
 import { sendSales } from "../../server/sales";
-import { useLocation } from 'react-router-dom';
+import Context from "../../context";
+import { useContext } from "react";
 
 interface Ifile
 {
@@ -26,8 +27,8 @@ interface IsendSales
 
 export default function SubmitSales() 
 {
-
-  const location = useLocation();
+ 
+  const {user,setUser} = useContext(Context);
 
   const {
     register,
@@ -71,7 +72,7 @@ export default function SubmitSales()
   const fileState = watch("file")
   const onSubmit = handleSubmit((data) => {
 
-    const id = location.state?.user?.id;
+    const id = user?.id;
     const file = data.file;
 
     const salesData = {

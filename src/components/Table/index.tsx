@@ -7,9 +7,10 @@ interface Itable
   fields:string[];
   title:string;
   description?:string;
+  length?:number|string;
 }
 
-export default function Table({fields,children,title,description}:Itable) 
+export default function Table({fields,children,title,description,length}:Itable) 
 {
   return (
    <Container>
@@ -43,6 +44,18 @@ export default function Table({fields,children,title,description}:Itable)
                 <tbody>
                  {
                   children
+                 }
+                 {
+                  length&&(
+                   <tr>
+                    <td>
+                     registros
+                    </td>
+                    <td>
+                     {  length }
+                    </td>
+                   </tr>
+                  )
                  }
                 </tbody>
               </table>

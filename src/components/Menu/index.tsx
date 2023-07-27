@@ -1,18 +1,13 @@
 import { Container } from "./styles";
-
 import Out from '../../assets/out.svg';
-import Hide from "../../assets/hide.svg";
 import LogoIcone from '../../assets/logoIco.png';
-
 import { links } from "./links";
-import { Link, useNavigate } from "react-router-dom";
-
-
+import {  Link, useNavigate } from "react-router-dom";
 interface Imenu
 {
   nome?:string;
 }
-export default function Menu({nome="lucas"}:Imenu) 
+export default function Menu({nome}:Imenu) 
 {
   const navigate = useNavigate();
   return (

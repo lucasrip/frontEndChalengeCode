@@ -2,7 +2,7 @@ import { Container, Main } from './styles';
 import Logo from '../../assets/logo.png';
 import Draw from '../../assets/saleImage.png';
 import Button from '../../components/Button';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Form from '../../components/Form';
 import { IFormData } from '../../types/formData';
 import { toast } from 'react-toastify';
@@ -11,6 +11,7 @@ import { loginUser, registerUser } from '../../server/user';
 import { useMutation } from 'react-query';
 import { AxiosError } from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Context from '../../context';
 
 interface IoptionsConfig
 {
@@ -25,7 +26,8 @@ export default function Home()
     label:'',
     action:(data:IFormData)=> void
   });
-
+  
+  const {user,setUser} = useContext(Context);
   const navigate = useNavigate();
 
   function handleRegister(data:IFormData)
@@ -52,7 +54,8 @@ export default function Home()
   const {mutate:loginMutate } = useMutation((data:Iuser) => loginUser(data),{
     onSuccess:(response) => {
       toast.success(`logado com sucesso, seja bem vindo ${response.data.nome}`);
-      navigate('/dashboard',{state:{ user:response.data}});
+      navigate('/dashboard');
+      setUser(response.data);
     } ,
     onError: (data:AxiosError) => {
       const error = data?.response?.data as string;

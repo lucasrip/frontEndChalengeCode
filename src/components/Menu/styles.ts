@@ -4,7 +4,6 @@ import { colors } from '../../globalStyles/colors';
 export const Container = styled.div`
 width: 24rem;
 min-height:100%;
-min-width:15rem;
 background: ${colors.gray.normal};
 color:${colors.black.medium};
 
@@ -46,7 +45,6 @@ color:${colors.black.medium};
       font-weight: 500;
       font-size: 1.2rem;
       max-width: 10rem;
-      min-width: auto;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -60,19 +58,21 @@ color:${colors.black.medium};
   display: flex;
   flex-direction:column;
   height: 60rem;
+  width: 100%;
 
   padding:1rem 0.5rem;
   gap:2rem;
   scrollbar-color:${colors.blue.normal};
   a 
   {
-    width: 100%;
-    min-width:15rem;
+    width: auto;
     height: auto;
     display:flex;
     padding:0.5rem;
-    font-size:1.5rem;
+    font-size:1.2rem;
     font-weight:normal;
+    text-transform:capitalize;
+
     img
     {
       width: 2rem;

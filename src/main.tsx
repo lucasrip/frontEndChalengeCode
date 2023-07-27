@@ -7,6 +7,7 @@ import App from './App';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import SubmitFile from './components/SubmitSales.tsx';
+import SalesList from './components/Saleslist';
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -27,8 +28,8 @@ const router = createBrowserRouter([
           element: <SubmitFile/>,
          },
          {
-          path:'/dashboard/test',
-          element: <h1>teste</h1>,
+          path:'/dashboard/salesList',
+          element: <SalesList/>,
          }
         ]
       }

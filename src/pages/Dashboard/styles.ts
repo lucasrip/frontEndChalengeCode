@@ -6,7 +6,7 @@ position:relative;
 display:flex;
 width:100%;
 height:100%;
-min-height:100rem;
+min-height:70rem;
 background:${colors.gray.light};
 color:${colors.black.medium};
 gap:6rem;
@@ -20,7 +20,7 @@ main
   color:${colors.black.medium};
   justify-content:center;
   align-items:center;
-  padding-bottom:3rem;
+  padding:3rem 0;
 }
 
 @media(max-width:1000px)
@@ -35,11 +35,23 @@ main
   {
     & main
     {
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      padding: 0.5rem;
+      
       align-items:flex-start;
       justify-content:flex-start;
 
     }
+
+
+  @media(max-width:300px)
+  {
+    & main
+    {
+      padding: 0rem;
+      width:100%;
+      margin: 0;
+      
+    }
+  }
   }
 `;
