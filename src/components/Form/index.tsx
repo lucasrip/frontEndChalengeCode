@@ -33,13 +33,7 @@ export default function Form({setFormIsOpen,optionsConfig, setOptionsConfig}:Ifo
   const {
     register,
     handleSubmit,
-  } = useForm<IFormData>({
-    defaultValues:{
-     nome:"lucas",
-     senha:"dddasd",
-     email:"luDDcas32@gail.com"
-    }
-  });
+  } = useForm<IFormData>({});
 
   function handleRecoverPassword(data:IFormData)
   {

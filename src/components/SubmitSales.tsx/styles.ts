@@ -65,6 +65,7 @@ export const FormFile = styled.form`
   p
   {
     padding: 1rem;
+    width: 100%;
     text-align:center;
     text-justify:center;
   }
@@ -127,6 +128,7 @@ export const FileModelContainer = styled.div`
     flex-direction:column;
     width: 100%;
     justify-content:center;
+    align-items:center;
     padding: 0.5rem;
     gap:2rem;
     a{
@@ -136,10 +138,14 @@ export const FileModelContainer = styled.div`
 
     & > div
     {
+      
       margin-left:1rem;
       margin-top:2rem;
 
-   
+       strong
+       {
+        width: 100%;
+       }
     }
 
 
