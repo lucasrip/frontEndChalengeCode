@@ -1,16 +1,17 @@
 import { Container, SalesValuesContainer, TableBody } from "./styles";
 import listIcon from '../../assets/list.svg'
 import { toast } from "react-toastify";
-import { useMutation, useQuery } from "react-query";
+import { useMutation } from "react-query";
 import { aboutValues, findByFilter } from "../../server/sales";
 import { IfindByFilter, IsalesData } from "../../types/sales";
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 
-import Table from "../Table";
-import Pagination from "../Pagination";
+import Table from "../../components/Table";
+import Pagination from "../../components/Pagination";
 import Context from "../../context";
 import IsaleValue from "../../types/salesValues";
-import SaleItemInformation from "../SaleitemInformation";
+import SaleItemInformation from "../../components/SaleitemInformation";
+import { useEffect } from 'react';
 
 export default function SalesList() 
 {
@@ -22,20 +23,21 @@ export default function SalesList()
   
   const {user,setUser} = useContext(Context);
   
-  
-  useEffect(()=>{
-    const initialConfig:IfindByFilter ={
-    id:user?.id,
-    limit:5,
-    offset:0,
-    field:"vendedor",
-    order:"asc"
-  }
-    searchMutate(initialConfig)
-    searchSalesValuesMutation(user.id);
+    useEffect(()=>{
+          const initialConfig:IfindByFilter = {
+        id:user?.id,
+        limit:5,
+        offset:0,
+        field:"vendedor",
+        order:"asc"
+      }
+      searchMutate(initialConfig)
+      searchSalesValuesMutation(user.id);
 
-  },[user])
+      
+    },[]);
 
+    
     const { mutate:searchMutate} = useMutation((config:IfindByFilter)=> findByFilter(config), {
     onSuccess:(dataResult:any) =>{ 
      
@@ -52,8 +54,7 @@ export default function SalesList()
     onError: () => {toast.error("there was an unexpected error please try again later")},
    });
 
-
-   
+ 
   return (
    <Container>
       <header>

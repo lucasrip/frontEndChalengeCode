@@ -9,6 +9,7 @@ interface Imenu
 }
 export default function Menu({nome}:Imenu) 
 {
+
   const navigate = useNavigate();
   return (
    <Container>

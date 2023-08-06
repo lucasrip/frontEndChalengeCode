@@ -6,8 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
-import SubmitFile from './components/SubmitSales.tsx';
-import SalesList from './components/Saleslist';
+import SubmitFile from './pages/SubmitSales.tsx';
+import SalesList from './pages/Saleslist';
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([

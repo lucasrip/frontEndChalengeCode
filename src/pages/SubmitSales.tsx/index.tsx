@@ -4,12 +4,12 @@ import { toast } from 'react-toastify';
 import { AxiosError } from "axios";
 import { useMutation } from 'react-query';
 import { useForm } from "react-hook-form";
-import Button from "../Button";
+import Button from "../../components/Button";
 
 import fileModel from '../../assets/salesModelo.txt'
 import { formatItemsSales } from "./formatItemsSales";
 import { tiposTrasacao } from "./tiposTransação";
-import Table from "../Table";
+import Table from "../../components/Table";
 import { sendSales } from "../../server/sales";
 import Context from "../../context";
 import { useContext } from "react";
@@ -27,31 +27,32 @@ interface IsendSales
 
 export default function SubmitSales() 
 {
- 
+  
   const {user,setUser} = useContext(Context);
-
+  
   const {
     register,
     setValue,
     handleSubmit,
     watch,
   } = useForm<Ifile>();
- 
+  
+  const fileState = watch("file")
 
   function dropFile(e:any)
   {
     e.preventDefault();
-    
+    let files:FileList = {} as FileList;
     if (e.dataTransfer.items) {
       for (let i = 0; i < e.dataTransfer.items.length; i++) {
         if (e.dataTransfer.items[i].kind === 'file') {
-          let file = e.dataTransfer.items[i].getAsFile();
-          setValue("file",file);
+           files[0] = e.dataTransfer.items[i].getAsFile();
+          }
         }
+      } else {
+        toast.error("o arquivo enviado não é valido")
       }
-    } else {
-     toast.error("o arquivo enviado não é valido")
-    }
+      setValue("file",files);
   }
   function dragOverHandler(e:any)
   {
@@ -69,12 +70,12 @@ export default function SubmitSales()
     },
   });
  
-  const fileState = watch("file")
+
   const onSubmit = handleSubmit((data) => {
 
     const id = user?.id;
     const file = data.file;
-
+    console.log(data)
     const salesData = {
       id,
       file

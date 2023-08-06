@@ -53,9 +53,9 @@ export default function Home()
 
   const {mutate:loginMutate } = useMutation((data:Iuser) => loginUser(data),{
     onSuccess:(response) => {
+      setUser(response.data);
       toast.success(`logado com sucesso, seja bem vindo ${response.data.nome}`);
       navigate('/dashboard');
-      setUser(response.data);
     } ,
     onError: (data:AxiosError) => {
       const error = data?.response?.data as string;
